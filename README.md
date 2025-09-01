@@ -103,7 +103,7 @@ El contenido dentro de `site/` es el que se publica en **GitHub Pages**.
 - [Documentación del curso en Moodle](https://ev1.utec.edu.uy/moodle/course/view.php?id=15375&section=1#tabs-tree-start)  
 - [MkDocs — Documentación oficial](https://www.mkdocs.org/)  
 - [Material for MkDocs — Tema oficial](https://squidfunk.github.io/mkdocs-material/)  
-
+- [Comandos - GIT](https://education.github.com/git-cheat-sheet-education.pdf)
 ---
 
 ## 🚀 Demo del template
