@@ -1,5 +1,9 @@
-## Welcome
+## Empezamos una nueva aventura...
 
 ![](../images/perezoso.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+...En el proceso de este posgrado de Especialización en Fabricación Digital e Innovación . UTEC & FAB LAB BARCELONA
+
+Las tecnologías de manufactura digital son una puerta a nuevas posibilidades en diseño, ligado a la innovación y la democratización, para poder indagar y explorar en nuevos contextos, soluciones a desafíos presentes y futuros. 
+
+Me emociona empezar este camino interdisciplinario, con diferentes perspectivas de todos los compañeros y mentores.
