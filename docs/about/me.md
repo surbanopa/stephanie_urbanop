@@ -10,4 +10,4 @@ Combino tradición con nuevas tecnologías para desarrollar soluciones que desaf
 
 Me emociona mucho esta especialización en manufactura digital  y será un placer compartir los hallazgos que iré desarrollando en el camino, así que esta página será una bitácora digital de este proceso.
 
-Mi portafolio y la gran mayoría de mis trabajos los dejo por aquí **[my website](https://stephurbanop.wordpress.com/)**
+Mi portafolio y la gran mayoría de mis trabajos los dejo por **[aquí](https://stephurbanop.wordpress.com/)**
