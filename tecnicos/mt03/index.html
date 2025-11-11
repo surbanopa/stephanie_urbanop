@@ -342,6 +342,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#proceso-de-diseno-y-fabricacion" class="md-nav__link">
+    Proceso de diseño y fabricación
+  </a>
+  
+    <nav class="md-nav" aria-label="Proceso de diseño y fabricación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-de-archivos" class="md-nav__link">
+    Preparación de archivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -605,6 +625,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#proceso-de-diseno-y-fabricacion" class="md-nav__link">
+    Proceso de diseño y fabricación
+  </a>
+  
+    <nav class="md-nav" aria-label="Proceso de diseño y fabricación">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preparacion-de-archivos" class="md-nav__link">
+    Preparación de archivos
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -653,6 +693,41 @@ Para el corte láser, podemos usar materiales hasta de 6mm de espesor, mientras 
 <h6 id="consideraciones">Consideraciones<a class="headerlink" href="#consideraciones" title="Permanent link">&para;</a></h6>
 <p>Como recurso de fabricación para encajes o ensambles, debemos considerar la <strong>holgura</strong> según el tipo de ajuste que se desea tener en esta pieza: ceñido, normal o holgado. Esta medida adicional es la que se le debe añadir a la pieza durante el diseño, para que luego al realizar el encaje, estas piezas queden firmes.Tener en consideración que este valor debe considerar <strong>tolerancia</strong> que es la variación máxima permitida en las dimensiones y forma de una pieza cortada con respecto a su diseño original. Esto varía según la máquina y tipo de tecnología.</p>
 <p><img alt="" src="../../images/MT03/Diapositiva6.JPG" /></p>
+<h4 id="proceso-de-diseno-y-fabricacion">Proceso de diseño y fabricación<a class="headerlink" href="#proceso-de-diseno-y-fabricacion" title="Permanent link">&para;</a></h4>
+<h5 id="preparacion-de-archivos">Preparación de archivos<a class="headerlink" href="#preparacion-de-archivos" title="Permanent link">&para;</a></h5>
+<p><em>Diseño vectorial</em></p>
+<p>El corte láser opera sobre <strong>geometrías bidimensionales</strong> derivadas de archivos vectoriales. Personalmente siempre he preparado mis archivos en un software de diseño vectorial 2D, como <em>Adobe Illustrator</em>. Sin embargo, los software de modelado 3D permiten exportar también vistas 2D por lo cual pueden ser de gran ayuda por ejemplo, a la hora de trabajar con curvas, varias piezas, y poder visualizar el modelado armado.
+Para este ejercicio, se sugirió el uso de <em>Fusion 360</em>, considerando una ventaja interesante para la automatización que fue, el uso de <strong>parámetros</strong>, valores que establecemos y podemos cambiar posteriormente. Esto facilita la actualización de datos y cambios en el modelo. </p>
+<p><img alt="" src="../../images/MT03/Diapositiva7.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva8.JPG" /></p>
+<p>Otra función que probé fue la de modelado a través de una chapa metálica. Configurando el material a trabajar (en este caso mdf), se puede configurar una chapa que podrá doblarse y desdoblarse, marcando el área que corresponde a dicho doblez.
+<img alt="" src="../images/MT03/Diapositiva9.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva10.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva11.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva12.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva13.JPG" /></p>
+<p><em><strong>Kerf bending</strong></em></p>
+<p>Es en este espacio donde se aplica la técnica de <strong>kerfing</strong>, que son patrones de corte que permitirán doblar un material rígido y plano.
+<img alt="" src="../../images/MT03/Diapositiva14.JPG" />
+Se definieron las dimensiones de estos espacios que tienen relación con el grosor del material y donde también se emplearon los parámetros.
+<img alt="" src="../../images/MT03/Diapositiva15.JPG" />
+Con la función de patrón rectangular se realizo la distribución de dichas líneas para un resultado más rápido y preciso.
+<img alt="" src="../../images/MT03/Diapositiva16.JPG" /></p>
+<p>Todo lo anterior fue realizado a modo de prueba, ya que anteriormente no había probado con estas funciones. Ya pensando en una pieza para la materializar esto - sin darle mucho diseño-, probé generando una cara donde irán los encajes.
+<img alt="" src="../images/MT03/Diapositiva17.JPG" /></p>
+<p>Luego se aplico la opción de chapa metálica, obteniendo la distancia correspondiente a la curva con mayor precisión luego de usar la función de desplegado.
+<img alt="" src="../images/MT03/Diapositiva18.JPG" /></p>
+<p><em><strong>Nesting</strong></em></p>
+<p>Cuando ya tenemos las piezas listas, el programa nos permite generar una disposición eficiente de estas piezas en el espacio o material que se va a trabajar. 
+Igualmente, existen otros programas online y desktop como <em>deepnest y fatlab</em> para poder generar una organización de las piezas. Esta función me parece especialmente útil cuando se trata de varias veces para cortar.
+<img alt="" src="../../images/MT03/Diapositiva21.JPG" />
+<img alt="" src="../../images/MT03/Diapositiva22.JPG" />
+Las caras del modelado se proyectando en el espacio donde se va a organizar las piezas. Por otro lado, también podemos exportar el boceto en formato DXF y luego acomodar todo en el programa de diseño vectorial.
+<img alt="" src="../../images/MT03/Diapositiva23.JPG" />
+Dentro de los tutoriales que encontré para guiarme de estas funciones, había una opción de perfil 2D, igual orientada a preparar las piezas para el corte. No la pude explorar tanto, pero me pareció interesante, y refuerza la esencia de Fusion 360 como programa orientado a la fabricación, por lo que muchas funciones que tiene son realmente útiles.
+<img alt="" src="../../images/MT03/Diapositiva25.JPG" /></p>
+<p>En el espacio de trabajo de Adobe Illustrator, hay que activar la opción de importación, para poder ajustar como se van a importar archivos que vienen de otros programas. Esto es porque el programa hace un escalado automático y las medidas terminan por no coincidir.</p>
+<p><img alt="" src="../../images/MT03/Diapositiva24.JPG" /></p>
                 
                   
                     
@@ -661,7 +736,7 @@ Para el corte láser, podemos usar materiales hasta de 6mm de espesor, mientras 
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2025 22:15:09 UTC">November 11, 2025</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2025 22:36:19 UTC">November 11, 2025</span>
     
   </small>
 </div>
