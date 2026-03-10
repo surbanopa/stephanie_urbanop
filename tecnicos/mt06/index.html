@@ -725,7 +725,7 @@
 <h5 id="conceptos-importantes">Conceptos importantes<a class="headerlink" href="#conceptos-importantes" title="Permanent link">&para;</a></h5>
 <p>El ESP32 es un microcontrolador de bajo costo y alto rendimiento ampliamente utilizado en proyectos de Internet de las Cosas (IoT) debido a que integra conectividad WiFi y Bluetooth, además de múltiples interfaces de comunicación.</p>
 <p>Para programar el ESP32 se utilizó el software Arduino IDE, que permite desarrollar, compilar y cargar código en diferentes placas de desarrollo. Para poder utilizar ESP32 dentro de este entorno es necesario instalar previamente el paquete de soporte de placas (Board Package) correspondiente.</p>
-<p>FIG1</p>
+<p><img alt="" src="../../images/MT06/Diapositiva1.JPG" /> </p>
 <p>Entre los protocolos de comunicación utilizados en el ejercicio se encuentran:</p>
 <ul>
 <li>UART (Universal Asynchronous Receiver Transmitter): protocolo de comunicación serial utilizado para transmitir datos entre microcontroladores.</li>
@@ -760,7 +760,7 @@ Estas direcciones permiten descargar los paquetes necesarios para trabajar con p
 <p>Posteriormente se accedió a:
 Tools → Board → Boards Manager
 Desde allí se buscó ESP32 y se procedió con la instalación del paquete correspondiente.</p>
-<p>FIG2</p>
+<p><img alt="" src="../../images/MT06/Diapositiva2.JPG" /> </p>
 <h6 id="ejercicio1">Ejercicio1<a class="headerlink" href="#ejercicio1" title="Permanent link">&para;</a></h6>
 <p>Para este primer ejericio se buscó implementar un sistema de comunicación entre dos microcontroladores ESP32 mediante UART,donde uno actúe como emisor y otro como receptor.
 Los componentes utilizados fueron:
@@ -777,7 +777,8 @@ Los componentes utilizados fueron:
 •   Recibe el mensaje serial.
 •   Interpreta el comando recibido.
 •   Enciende o apaga un LED según la instrucción.</p>
-<p>IMG 3</p>
+<p><img alt="" src="../../images/MT06/Diapositiva3.JPG" /> </p>
+<p><img alt="" src="../../images/MT06/ej1.gif" /> </p>
 <p>La interfaz de comunicación empleada fue UART y la comunicación se realizó mediante los pines de transmisión y recepción:
 •   TX (transmisión)
 •   RX (recepción)
@@ -789,9 +790,10 @@ Los datos se enviaron como cadenas de texto, lo que permitió interpretar fácil
 <p>El codigo usado para este ejercicio fue: 
 Emisor: <a href="https://pastebin.com/1ue5XRCQ">https://pastebin.com/1ue5XRCQ</a>
 Receptor:<a href="https://pastebin.com/3FQbShiS">https://pastebin.com/3FQbShiS</a></p>
-<p>IMG4</p>
+<p><img alt="" src="../../images/MT06/Diapositiva4.JPG" /> </p>
 <h6 id="ejercicio2">Ejercicio2<a class="headerlink" href="#ejercicio2" title="Permanent link">&para;</a></h6>
-<p>El objetivo de este ejericio fue usar un ESP32 para conectarse a una red WiFi y realizar una solicitud HTTP a una página web.</p>
+<p>El objetivo de este ejericio fue usar un ESP32 para conectarse a una red WiFi y realizar una solicitud HTTP a una página web.
+Para este ejercicio, empleamos el siguiente código: <a href="https://wokwi.com/projects/455582534712036353">https://wokwi.com/projects/455582534712036353</a></p>
 <p>El programa realiza las siguientes acciones:
 1.  Se conecta a una red WiFi previamente definida.
 2.  Una vez establecida la conexión, realiza una petición a una página web.
@@ -802,6 +804,7 @@ Receptor:<a href="https://pastebin.com/3FQbShiS">https://pastebin.com/3FQbShiS</
 •   Código de respuesta HTTP del servidor
 •   Los primeros caracteres del contenido recibido</p>
 <p>Se utilizó la interfaz WiFi integrada del ESP32.</p>
+<p><img alt="" src="../../images/MT06/Diapositiva5.JPG" /> </p>
 <h6 id="ejercicio3">Ejercicio3<a class="headerlink" href="#ejercicio3" title="Permanent link">&para;</a></h6>
 <p>Con la base del ejercicio anterior, se buscó desarrollar un sistema IoT capaz de enviar datos de sensores a través de un broker MQTT.
 Para este ejercicio usamos un:
@@ -812,16 +815,19 @@ Para este ejercicio usamos un:
 2.  Se conecta a un broker MQTT público.
 3.  Lee periódicamente los datos de temperatura y humedad del sensor DHT22.
 4.  Publica este mensaje en un topic MQTT.</p>
+<p><img alt="" src="../../images/MT06/Diapositiva6.JPG" /> </p>
 <p>El topic utilizado sigue la estructura:
 mat_utec/&lt; pais &gt;/&lt; zona &gt;
 En mi caso coloque mat_utec/&lt; PE &gt;/&lt; Junin &gt;</p>
 <p>El mensaje enviado contiene información estructurada, por ejemplo:
 &ldquo;temperatura&rdquo;: 24.3,&rdquo;humedad&rdquo;: 58</p>
-<p>Para esto, se utilizó el protocolo MQTT sobre conexión WiFi.</p>
+<p>En este enlace, se visualiza el código utilizado: <a href="https://wokwi.com/projects/455570934245246977">https://wokwi.com/projects/455570934245246977</a></p>
+<p><img alt="" src="../../images/MT06/Diapositiva7.JPG" /> </p>
 <p>El ESP32 utiliza librerías de comunicación MQTT que permiten:
 •   Conectarse al broker
 •   Publicar datos
 •   Mantener la conexión activa</p>
+<p><img alt="" src="../../images/MT06/Diapositiva8.JPG" /> </p>
 <p>En este ejercicio el sistema se centró en la lectura de sensores, por lo que el dispositivo principal fue el sensor DHT22, utilizado como fuente de datos ambientales. El ESP32 recopila información del entorno y la transmite periódicamente a través de MQTT para que pueda ser utilizada por otros sistemas o plataformas IoT.</p>
 <h5 id="reflexion">Reflexión<a class="headerlink" href="#reflexion" title="Permanent link">&para;</a></h5>
 <p>El desarrollo de los ejercicios permitió comprender el funcionamiento de diferentes protocolos de comunicación utilizados en sistemas IoT, así como las capacidades del microcontrolador ESP32 para interactuar con dispositivos externos y servicios en internet.
@@ -837,7 +843,7 @@ Finalmente, en el tercer ejercicio se integró un sensor ambiental con el protoc
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:02:18 UTC">March 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:18:56 UTC">March 10, 2026</span>
     
   </small>
 </div>
