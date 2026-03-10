@@ -736,57 +736,59 @@
 <h5 id="proceso">Proceso<a class="headerlink" href="#proceso" title="Permanent link">&para;</a></h5>
 <p>Durante el desarrollo del ejercicio se emplearon las siguientes herramientas:
 Software
-•   Arduino IDE
-•   Librerías WiFi
-•   Librerías HTTPClient
-•   Librerías MQTT
-•   Librería del sensor DHT22
-Hardware
-•   Placas ESP32
-•   Sensor DHT22 para temperatura y humedad relativa
-•   LED
-•   Botón pulsador
-•   Resistencias
-•   Cables de conexión</p>
+- Arduino IDE
+- Librerías WiFi
+- Librerías HTTPClient
+- Librerías MQTT
+- Librería del sensor DHT22</p>
+<p>Hardware
+- Placas ESP32
+- Sensor DHT22 para temperatura y humedad relativa
+- LED
+- Botón pulsador
+- Resistencias
+- Cables de conexión</p>
 <h6 id="configuracion-del-entorno-de-desarrollo">Configuración del entorno de desarrollo<a class="headerlink" href="#configuracion-del-entorno-de-desarrollo" title="Permanent link">&para;</a></h6>
 <p>El primer paso consistió en configurar el entorno de programación para que reconozca las placas ESP32.</p>
-<p>Se inició el software Arduino IDE, que permite escribir y cargar programas en el microcontrolador.
-En el menú principal se seleccionó:
-Arduino IDE → Preferences
-En el campo Additional Boards Manager URLs se añadieron las siguientes direcciones:
+<p>Se inició el software Arduino IDE, que permite escribir y cargar programas en el microcontrolador.</p>
+<p>En el menú principal se seleccionó:
+Arduino IDE → Preferences</p>
+<p>En el campo Additional Boards Manager URLs se añadieron las siguientes direcciones:
 <a href="https://dl.espressif.com/dl/package_esp32_index.json">https://dl.espressif.com/dl/package_esp32_index.json</a>
 <a href="https://resource.heltec.cn/download/package_heltec_esp32_index.json">https://resource.heltec.cn/download/package_heltec_esp32_index.json</a>
 Estas direcciones permiten descargar los paquetes necesarios para trabajar con placas basadas en ESP32.</p>
-<p>Posteriormente se accedió a:
-Tools → Board → Boards Manager
-Desde allí se buscó ESP32 y se procedió con la instalación del paquete correspondiente.</p>
+<p>Posteriormente se accedió a:</p>
+<p>Tools → Board → Boards Manager</p>
+<p>Desde allí se buscó ESP32 y se procedió con la instalación del paquete correspondiente.</p>
 <p><img alt="" src="../../images/MT06/Diapositiva2.JPG" /> </p>
 <h6 id="ejercicio1">Ejercicio1<a class="headerlink" href="#ejercicio1" title="Permanent link">&para;</a></h6>
-<p>Para este primer ejericio se buscó implementar un sistema de comunicación entre dos microcontroladores ESP32 mediante UART,donde uno actúe como emisor y otro como receptor.
-Los componentes utilizados fueron:
-•   2 placas ESP32
-•   1 botón pulsador
-•   1 LED
-•   Resistencias
-•   Cables de conexión</p>
+<p>Para este primer ejericio se buscó implementar un sistema de comunicación entre dos microcontroladores ESP32 mediante UART,donde uno actúe como emisor y otro como receptor.</p>
+<p>Los componentes utilizados fueron:</p>
+<ul>
+<li>2 placas ESP32</li>
+<li>1 botón pulsador</li>
+<li>1 LED</li>
+<li>Resistencias</li>
+<li>Cables de conexión</li>
+</ul>
 <p>Funcionamiento del sistema
 <em>ESP32 A (Emisor)</em>
-•   Detecta cuando el usuario presiona un botón.
-•   Al activarse el botón, envía un mensaje a través del puerto UART.
+- Detecta cuando el usuario presiona un botón.
+- Al activarse el botón, envía un mensaje a través del puerto UART.
 <em>ESP32 B (Receptor)</em>
-•   Recibe el mensaje serial.
-•   Interpreta el comando recibido.
-•   Enciende o apaga un LED según la instrucción.</p>
+- Recibe el mensaje serial.
+- Interpreta el comando recibido.
+- Enciende o apaga un LED según la instrucción.</p>
 <p><img alt="" src="../../images/MT06/Diapositiva3.JPG" /> </p>
 <p><img alt="" src="../../images/MT06/ej1.gif" /> </p>
 <p>La interfaz de comunicación empleada fue UART y la comunicación se realizó mediante los pines de transmisión y recepción:
-•   TX (transmisión)
-•   RX (recepción)
+- TX (transmisión)
+- RX (recepción)
 Los datos se enviaron como cadenas de texto, lo que permitió interpretar fácilmente los comandos recibidos.</p>
 <p>Y como actuador se utilizo un LED.</p>
 <p>Cuando el receptor detecta el comando enviado por el ESP32 emisor:
-•   Comando ON → LED encendido
-•   Comando OFF → LED apagado</p>
+- Comando ON → LED encendido
+- Comando OFF → LED apagado</p>
 <p>El codigo usado para este ejercicio fue: 
 Emisor: <a href="https://pastebin.com/1ue5XRCQ">https://pastebin.com/1ue5XRCQ</a>
 Receptor:<a href="https://pastebin.com/3FQbShiS">https://pastebin.com/3FQbShiS</a></p>
@@ -799,17 +801,17 @@ Para este ejercicio, empleamos el siguiente código: <a href="https://wokwi.com/
 2.  Una vez establecida la conexión, realiza una petición a una página web.
 3.  La respuesta obtenida se muestra en el Serial Monitor.</p>
 <p>En el monitor serial se visualizaron los siguientes datos:
-•   Confirmación de conexión a la red
-•   Dirección IP asignada al dispositivo
-•   Código de respuesta HTTP del servidor
-•   Los primeros caracteres del contenido recibido</p>
+- Confirmación de conexión a la red
+- Dirección IP asignada al dispositivo
+- Código de respuesta HTTP del servidor
+-  Los primeros caracteres del contenido recibido</p>
 <p>Se utilizó la interfaz WiFi integrada del ESP32.</p>
 <p><img alt="" src="../../images/MT06/Diapositiva5.JPG" /> </p>
 <h6 id="ejercicio3">Ejercicio3<a class="headerlink" href="#ejercicio3" title="Permanent link">&para;</a></h6>
-<p>Con la base del ejercicio anterior, se buscó desarrollar un sistema IoT capaz de enviar datos de sensores a través de un broker MQTT.
-Para este ejercicio usamos un:
-•   ESP32
-•   Sensor DHT22</p>
+<p>Con la base del ejercicio anterior, se buscó desarrollar un sistema IoT capaz de enviar datos de sensores a través de un broker MQTT.</p>
+<p>Para este ejercicio usamos un:
+- ESP32
+- Sensor DHT22</p>
 <p>Seguimos los siguientes pasos
 1.  Se conecta a una red WiFi.
 2.  Se conecta a un broker MQTT público.
@@ -824,9 +826,9 @@ En mi caso coloque mat_utec/&lt; PE &gt;/&lt; Junin &gt;</p>
 <p>En este enlace, se visualiza el código utilizado: <a href="https://wokwi.com/projects/455570934245246977">https://wokwi.com/projects/455570934245246977</a></p>
 <p><img alt="" src="../../images/MT06/Diapositiva7.JPG" /> </p>
 <p>El ESP32 utiliza librerías de comunicación MQTT que permiten:
-•   Conectarse al broker
-•   Publicar datos
-•   Mantener la conexión activa</p>
+- Conectarse al broker
+- Publicar datos
+- Mantener la conexión activa</p>
 <p><img alt="" src="../../images/MT06/Diapositiva8.JPG" /> </p>
 <p>En este ejercicio el sistema se centró en la lectura de sensores, por lo que el dispositivo principal fue el sensor DHT22, utilizado como fuente de datos ambientales. El ESP32 recopila información del entorno y la transmite periódicamente a través de MQTT para que pueda ser utilizada por otros sistemas o plataformas IoT.</p>
 <h5 id="reflexion">Reflexión<a class="headerlink" href="#reflexion" title="Permanent link">&para;</a></h5>
@@ -843,7 +845,7 @@ Finalmente, en el tercer ejercicio se integró un sensor ambiental con el protoc
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:18:56 UTC">March 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:24:26 UTC">March 10, 2026</span>
     
   </small>
 </div>
