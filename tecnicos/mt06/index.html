@@ -723,14 +723,16 @@
                 <h2 id="networking">Networking<a class="headerlink" href="#networking" title="Permanent link">&para;</a></h2>
 <p>Configuración y programación de ESP32 para comunicación UART, conexión WiFi y envío de datos mediante MQTT</p>
 <h5 id="conceptos-importantes">Conceptos importantes<a class="headerlink" href="#conceptos-importantes" title="Permanent link">&para;</a></h5>
-<p>El ESP32 es un microcontrolador de bajo costo y alto rendimiento ampliamente utilizado en proyectos de Internet de las Cosas (IoT) debido a que integra conectividad WiFi y Bluetooth, además de múltiples interfaces de comunicación.
-Para programar el ESP32 se utilizó el software Arduino IDE, que permite desarrollar, compilar y cargar código en diferentes placas de desarrollo. Para poder utilizar ESP32 dentro de este entorno es necesario instalar previamente el paquete de soporte de placas (Board Package) correspondiente.
-Entre los protocolos de comunicación utilizados en el ejercicio se encuentran:
-•   UART (Universal Asynchronous Receiver Transmitter): protocolo de comunicación serial utilizado para transmitir datos entre microcontroladores.
-•   WiFi: tecnología de red inalámbrica utilizada para conectar dispositivos a internet.
-•   HTTP: protocolo utilizado para realizar solicitudes a servidores web.
-•   MQTT (Message Queuing Telemetry Transport): protocolo ligero de mensajería diseñado para aplicaciones IoT, basado en el modelo publish/subscribe.
-Asimismo, se utilizó el sensor DHT22, capaz de medir temperatura y humedad relativa, y un LED como actuador para representar visualmente la recepción de comandos.</p>
+<p>El ESP32 es un microcontrolador de bajo costo y alto rendimiento ampliamente utilizado en proyectos de Internet de las Cosas (IoT) debido a que integra conectividad WiFi y Bluetooth, además de múltiples interfaces de comunicación.</p>
+<p>Para programar el ESP32 se utilizó el software Arduino IDE, que permite desarrollar, compilar y cargar código en diferentes placas de desarrollo. Para poder utilizar ESP32 dentro de este entorno es necesario instalar previamente el paquete de soporte de placas (Board Package) correspondiente.</p>
+<p>FIG1</p>
+<p>Entre los protocolos de comunicación utilizados en el ejercicio se encuentran:</p>
+<ul>
+<li>UART (Universal Asynchronous Receiver Transmitter): protocolo de comunicación serial utilizado para transmitir datos entre microcontroladores.</li>
+<li>WiFi: tecnología de red inalámbrica utilizada para conectar dispositivos a internet.</li>
+<li>HTTP: protocolo utilizado para realizar solicitudes a servidores web.</li>
+<li>MQTT (Message Queuing Telemetry Transport): protocolo ligero de mensajería diseñado para aplicaciones IoT, basado en el modelo publish/subscribe.</li>
+</ul>
 <h5 id="proceso">Proceso<a class="headerlink" href="#proceso" title="Permanent link">&para;</a></h5>
 <p>Durante el desarrollo del ejercicio se emplearon las siguientes herramientas:
 Software
@@ -741,7 +743,7 @@ Software
 •   Librería del sensor DHT22
 Hardware
 •   Placas ESP32
-•   Sensor DHT22
+•   Sensor DHT22 para temperatura y humedad relativa
 •   LED
 •   Botón pulsador
 •   Resistencias
@@ -751,7 +753,6 @@ Hardware
 <p>Se inició el software Arduino IDE, que permite escribir y cargar programas en el microcontrolador.
 En el menú principal se seleccionó:
 Arduino IDE → Preferences
-(o File → Preferences dependiendo del sistema operativo)
 En el campo Additional Boards Manager URLs se añadieron las siguientes direcciones:
 <a href="https://dl.espressif.com/dl/package_esp32_index.json">https://dl.espressif.com/dl/package_esp32_index.json</a>
 <a href="https://resource.heltec.cn/download/package_heltec_esp32_index.json">https://resource.heltec.cn/download/package_heltec_esp32_index.json</a>
@@ -759,9 +760,10 @@ Estas direcciones permiten descargar los paquetes necesarios para trabajar con p
 <p>Posteriormente se accedió a:
 Tools → Board → Boards Manager
 Desde allí se buscó ESP32 y se procedió con la instalación del paquete correspondiente.</p>
+<p>FIG2</p>
 <h6 id="ejercicio1">Ejercicio1<a class="headerlink" href="#ejercicio1" title="Permanent link">&para;</a></h6>
-<p>Para este primer ejericio se buscó implementar un sistema de comunicación entre dos microcontroladores ESP32 mediante UART, donde uno actúe como emisor y otro como receptor.
-Componentes utilizados
+<p>Para este primer ejericio se buscó implementar un sistema de comunicación entre dos microcontroladores ESP32 mediante UART,donde uno actúe como emisor y otro como receptor.
+Los componentes utilizados fueron:
 •   2 placas ESP32
 •   1 botón pulsador
 •   1 LED
@@ -775,6 +777,7 @@ Componentes utilizados
 •   Recibe el mensaje serial.
 •   Interpreta el comando recibido.
 •   Enciende o apaga un LED según la instrucción.</p>
+<p>IMG 3</p>
 <p>La interfaz de comunicación empleada fue UART y la comunicación se realizó mediante los pines de transmisión y recepción:
 •   TX (transmisión)
 •   RX (recepción)
@@ -783,11 +786,15 @@ Los datos se enviaron como cadenas de texto, lo que permitió interpretar fácil
 <p>Cuando el receptor detecta el comando enviado por el ESP32 emisor:
 •   Comando ON → LED encendido
 •   Comando OFF → LED apagado</p>
+<p>El codigo usado para este ejercicio fue: 
+Emisor: <a href="https://pastebin.com/1ue5XRCQ">https://pastebin.com/1ue5XRCQ</a>
+Receptor:<a href="https://pastebin.com/3FQbShiS">https://pastebin.com/3FQbShiS</a></p>
+<p>IMG4</p>
 <h6 id="ejercicio2">Ejercicio2<a class="headerlink" href="#ejercicio2" title="Permanent link">&para;</a></h6>
 <p>El objetivo de este ejericio fue usar un ESP32 para conectarse a una red WiFi y realizar una solicitud HTTP a una página web.</p>
 <p>El programa realiza las siguientes acciones:
 1.  Se conecta a una red WiFi previamente definida.
-2.  Una vez establecida la conexión, realiza una petición HTTP GET a una página web.
+2.  Una vez establecida la conexión, realiza una petición a una página web.
 3.  La respuesta obtenida se muestra en el Serial Monitor.</p>
 <p>En el monitor serial se visualizaron los siguientes datos:
 •   Confirmación de conexión a la red
@@ -795,7 +802,6 @@ Los datos se enviaron como cadenas de texto, lo que permitió interpretar fácil
 •   Código de respuesta HTTP del servidor
 •   Los primeros caracteres del contenido recibido</p>
 <p>Se utilizó la interfaz WiFi integrada del ESP32.</p>
-<p>El microcontrolador utiliza la librería WiFi para conectarse a la red y la librería HTTPClient para enviar solicitudes HTTP.</p>
 <h6 id="ejercicio3">Ejercicio3<a class="headerlink" href="#ejercicio3" title="Permanent link">&para;</a></h6>
 <p>Con la base del ejercicio anterior, se buscó desarrollar un sistema IoT capaz de enviar datos de sensores a través de un broker MQTT.
 Para este ejercicio usamos un:
@@ -805,27 +811,24 @@ Para este ejercicio usamos un:
 1.  Se conecta a una red WiFi.
 2.  Se conecta a un broker MQTT público.
 3.  Lee periódicamente los datos de temperatura y humedad del sensor DHT22.
-4.  Genera un mensaje en formato JSON.
-5.  Publica este mensaje en un topic MQTT.</p>
+4.  Publica este mensaje en un topic MQTT.</p>
 <p>El topic utilizado sigue la estructura:
-mat_utec/<pais>/<zona>
-En mi caso coloque mat_utec/<PE>/<Junin></p>
+mat_utec/&lt; pais &gt;/&lt; zona &gt;
+En mi caso coloque mat_utec/&lt; PE &gt;/&lt; Junin &gt;</p>
 <p>El mensaje enviado contiene información estructurada, por ejemplo:
 &ldquo;temperatura&rdquo;: 24.3,&rdquo;humedad&rdquo;: 58</p>
 <p>Para esto, se utilizó el protocolo MQTT sobre conexión WiFi.</p>
 <p>El ESP32 utiliza librerías de comunicación MQTT que permiten:
 •   Conectarse al broker
 •   Publicar datos
-•   Mantener la conexión activa
-Actuador seleccionado
-En este ejercicio el sistema se centró en la lectura de sensores, por lo que el dispositivo principal fue el sensor DHT22, utilizado como fuente de datos ambientales.</p>
-<p>El ESP32 recopila información del entorno y la transmite periódicamente a través de MQTT para que pueda ser utilizada por otros sistemas o plataformas IoT.</p>
+•   Mantener la conexión activa</p>
+<p>En este ejercicio el sistema se centró en la lectura de sensores, por lo que el dispositivo principal fue el sensor DHT22, utilizado como fuente de datos ambientales. El ESP32 recopila información del entorno y la transmite periódicamente a través de MQTT para que pueda ser utilizada por otros sistemas o plataformas IoT.</p>
 <h5 id="reflexion">Reflexión<a class="headerlink" href="#reflexion" title="Permanent link">&para;</a></h5>
 <p>El desarrollo de los ejercicios permitió comprender el funcionamiento de diferentes protocolos de comunicación utilizados en sistemas IoT, así como las capacidades del microcontrolador ESP32 para interactuar con dispositivos externos y servicios en internet.
 En el primer ejercicio se implementó una comunicación directa entre microcontroladores mediante UART, lo que demuestra la capacidad de los dispositivos para intercambiar información de forma simple y eficiente.
 En el segundo ejercicio se exploró la conectividad WiFi, permitiendo al ESP32 interactuar con servicios web mediante solicitudes HTTP.
-Finalmente, en el tercer ejercicio se integró un sensor ambiental con el protocolo MQTT, simulando un escenario real de Internet de las Cosas donde los datos de sensores pueden ser transmitidos y monitoreados remotamente.
-Estos ejercicios evidencian el potencial del ESP32 para el desarrollo de prototipos interactivos, sistemas de monitoreo y dispositivos inteligentes, especialmente en proyectos vinculados a fabricación digital, sensores ambientales y redes IoT.</p>
+Finalmente, en el tercer ejercicio se integró un sensor ambiental con el protocolo MQTT, simulando un escenario real de Internet de las Cosas donde los datos de sensores pueden ser transmitidos y monitoreados remotamente. Fue muy emocionante ver los datos de todos en una misma interfaz, a pesar de estar en diferentes espacios.</p>
+<p>Considero que estos ejercicios evidencian el potencial del ESP32 para el desarrollo de prototipos interactivos, sistemas de monitoreo y dispositivos inteligentes, especialmente en proyectos vinculados a fabricación digital, sensores ambientales y redes IoT.</p>
                 
                   
                     
@@ -834,7 +837,7 @@ Estos ejercicios evidencian el potencial del ESP32 para el desarrollo de prototi
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 9, 2026 23:22:15 UTC">March 9, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:02:18 UTC">March 10, 2026</span>
     
   </small>
 </div>
