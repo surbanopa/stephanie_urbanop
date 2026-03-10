@@ -780,7 +780,7 @@ Estas direcciones permiten descargar los paquetes necesarios para trabajar con p
 - Interpreta el comando recibido.
 - Enciende o apaga un LED según la instrucción.</p>
 <p><img alt="" src="../../images/MT06/Diapositiva3.JPG" /> </p>
-<p><img alt="" src="../../images/MT06/ej1.gif" /> </p>
+<p><img alt="" src="../../images/MT06/ej1.gif" /></p>
 <p>La interfaz de comunicación empleada fue UART y la comunicación se realizó mediante los pines de transmisión y recepción:
 - TX (transmisión)
 - RX (recepción)
@@ -825,10 +825,18 @@ En mi caso coloque mat_utec/&lt; PE &gt;/&lt; Junin &gt;</p>
 &ldquo;temperatura&rdquo;: 24.3,&rdquo;humedad&rdquo;: 58</p>
 <p>En este enlace, se visualiza el código utilizado: <a href="https://wokwi.com/projects/455570934245246977">https://wokwi.com/projects/455570934245246977</a></p>
 <p><img alt="" src="../../images/MT06/Diapositiva7.JPG" /> </p>
-<p>El ESP32 utiliza librerías de comunicación MQTT que permiten:
-- Conectarse al broker
-- Publicar datos
-- Mantener la conexión activa</p>
+<p>El ESP32 utiliza librerías de comunicación MQTT que permiten:</p>
+<ul>
+<li>
+<p>Conectarse al broker</p>
+</li>
+<li>
+<p>Publicar datos</p>
+</li>
+<li>
+<p>Mantener la conexión activa</p>
+</li>
+</ul>
 <p><img alt="" src="../../images/MT06/Diapositiva8.JPG" /> </p>
 <p>En este ejercicio el sistema se centró en la lectura de sensores, por lo que el dispositivo principal fue el sensor DHT22, utilizado como fuente de datos ambientales. El ESP32 recopila información del entorno y la transmite periódicamente a través de MQTT para que pueda ser utilizada por otros sistemas o plataformas IoT.</p>
 <h5 id="reflexion">Reflexión<a class="headerlink" href="#reflexion" title="Permanent link">&para;</a></h5>
@@ -845,7 +853,7 @@ Finalmente, en el tercer ejercicio se integró un sensor ambiental con el protoc
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:24:26 UTC">March 10, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 10, 2026 23:27:12 UTC">March 10, 2026</span>
     
   </small>
 </div>
