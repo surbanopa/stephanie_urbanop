@@ -3,6 +3,25 @@ hide:
     - toc
 ---
 
-# Ideas Iniciales
+## Sistema de indumentaria modular adaptativa para adultos mayores que promueva la autonomía en el vestido y la estimulación sensorial
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+![](../images/Final/Screenshot_4.jpg)
+
+![](../images/Final/Screenshot_5.jpg)
+
+![](../images/Final/Screenshot_6.jpg)
+
+![](../images/Final/Screenshot_7.jpg)
+
+![](../images/Final/Screenshot_8.jpg)
+
+![](../images/Final/Screenshot_9.jpg)
+
+![](../images/Final/Screenshot_10.jpg)
+
+![](../images/Final/Screenshot_11.jpg)
+
+![](../images/Final/Screenshot_12.jpg)
+
+![](../images/Final/Screenshot_13.jpg)
