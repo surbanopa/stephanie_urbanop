@@ -3,7 +3,7 @@ hide:
     - toc
 ---
 
-## Sistema de indumentaria modular adaptativa para adultos mayores que promueva la autonomía en el vestido y la estimulación sensorial
+#### DESARROLLO
 
 
 ![](../images/Final/Screenshot_4.jpg)
