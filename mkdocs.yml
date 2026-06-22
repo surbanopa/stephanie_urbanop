@@ -30,11 +30,11 @@ nav:
     - MI02: innovacion/mi02.md
     - MI03: innovacion/mi03.md
   - Proyecto Integrador:
-    - 01PF: proyecto/01presentacion.md
-    - Discover: proyecto/descubrir.md
-    - Define: proyecto/definir.md
-    - Develop: proyecto/desarrollo.md
-    - Deliver: proyecto/resultado.md
+    - PI01: proyecto/pi01.md
+    - PI02: proyecto/pi02.md
+    - PI03: proyecto/pi03.md
+    - PI04: proyecto/pi04.md
+    - PI05: proyecto/pi05.md
   - Referencias:
     - web: ref/web.md
 
