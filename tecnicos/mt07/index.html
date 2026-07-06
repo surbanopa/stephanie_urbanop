@@ -809,19 +809,18 @@
 <p>Como primera actividad se estableció la conexión entre el computador y el ESP32 utilizando el entorno de desarrollo Arduino IDE.</p>
 <blockquote>
 <p>void  setup () { 
-  Serial.begin ( 9600) ; }
-// Coloca aquí tu código de configuración, para que se ejecute una sola vez: Serial.begin ( 9600) ; }  
+    Serial.begin ( 9600) ; 
+    }  
   
 void  loop () { 
-  Serial . println ( &ldquo;¡Hola Mundo!&rdquo; ); delay (500); }  
-  
-// Coloca aquí tu código principal, para que se ejecute repetidamente: Serial . println ( &ldquo;¡Hola Mundo!&rdquo; ); delay (500); 
+    Serial . println ( &ldquo;¡Hola Mundo!&rdquo; ); delay (500);
 }  
+  
   </p>
 </blockquote>
-<p>Luego de cargar el comando, se abrió el Monitor Serial para comprobar que la comunicación entre ambos dispositivos se encontraba funcionando correctamente. El microcontrolador envió un mensaje de confirmación &lsquo;&rsquo;Hello Mundo!&rsquo;&rsquo; indicando que el programa se estaba ejecutando exitosamente, permitiendo verificar tanto la correcta programación como la comunicación serial antes de continuar con el desarrollo del proyecto.</p>
+<p>Luego de cargar el comando, se abrió el Monitor Serial para comprobar que la comunicación entre ambos dispositivos se encontraba funcionando correctamente. El microcontrolador envió un mensaje de confirmación &lsquo;&rsquo;Hello Mundo!&rsquo;&lsquo;, permitiendo verificar tanto la correcta programación como la comunicación serial antes de continuar con el desarrollo del proyecto.</p>
 <p><img alt="" src="../../images/INTER/Diapositiva1.JPG" /></p>
-<p>Esta primera validación constituye una práctica fundamental para identificar errores de conexión, configuración o carga del programa.</p>
+<p>Esta primera validación constituye una validación inicial para identificar errores de conexión, configuración o carga del programa.</p>
 <blockquote>
 <p>Ejercicio 02. Verificación del output mediante un LED</p>
 </blockquote>
@@ -841,17 +840,16 @@ void loop() {
 }</p>
 </blockquote>
 <p><img alt="" src="../../images/INTER/Diapositiva2.JPG" /></p>
-<p>Al ejecutar el código se verificó que el LED respondía correctamente a las instrucciones del microcontrolador, confirmando que el sistema era capaz de transformar una instrucción digital en una respuesta física observable.</p>
+<p>Al ejecutar el código se verificó que el LED respondía correctamente a las instrucciones del microcontrolador, confirmando que el sistema era capaz de transformar una instrucción digital en una respuesta física observable. En este caso el código mandaba al led a que estuviera intermitente</p>
 <p><img alt="" src="../../images/INTER/Diapositiva4.JPG" /></p>
 <p>Este ejercicio permitió afirmar el concepto de Output, identificando cómo una acción programada puede controlar un componente electrónico conectado al microcontrolador.</p>
 <blockquote>
 <p>Ejercicio 03. Desarrollo de una interfaz web para controlar el LED</p>
 </blockquote>
-<p>Como ejercicio integrador, se desarrolló una interfaz gráfica utilizando la plataforma Lovable, con el objetivo de controlar el LED desde una aplicación web.</p>
-<p>Previamente fue necesario configurar la conexión Wi-Fi del ESP32 dentro del programa, incorporando las credenciales de la red inalámbrica y obteniendo la dirección IP asignada al dispositivo una vez establecida la conexión.</p>
-<blockquote>
+<p><em>Como ejercicio integrador, se desarrolló una interfaz gráfica utilizando la plataforma Lovable, con el objetivo de controlar el LED desde una aplicación web.</em></p>
+<p>Previamente fue necesario configurar la conexión Wi-Fi del ESP32 dentro del programa, incorporando las credenciales de la red inalámbrica y obteniendo la dirección IP asignada al dispositivo una vez establecida la conexión.
+Para ello se empleó el siguiente código:</p>
 <h1 id="include">include <WiFi.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-</blockquote>
 <h1 id="include_1">include <WebServer.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
 <p>const char* ssid = &ldquo;JACKS&rdquo;;
 const char* password = &ldquo;24589723&rdquo;;
@@ -887,31 +885,32 @@ void loop() {
   server.handleClient();
 }</p>
 <p><img alt="" src="../../images/INTER/Diapositiva3.JPG" /></p>
-<p>Con esta información fue posible enlazar la interfaz desarrollada con el servidor web alojado en el ESP32.</p>
-<p><img alt="" src="../../images/INTER/Diapositiva5.JPG" /></p>
-<p>La aplicación incorporó dos botones principales:</p>
+<p>Con esta información fue posible obtener el IP a través del cual se realizaría la conexión. Para verificar este IP se colocaba en la web como /on y se apreciaba que el led encendia.</p>
+<p>Ya en la plataforma de Loveable se pidió el desarrollo de una interfaz, que incluyera dos botones principales:</p>
 <ul>
 <li>Encender LED</li>
 <li>Apagar LED</li>
 </ul>
+<p><img alt="" src="../../images/INTER/Diapositiva5.JPG" /></p>
+<p>Para que pudiese funcionar, se abrio en una ventana aparte</p>
 <p><img alt="" src="../../images/INTER/Diapositiva6.JPG" /></p>
 <p>Cada botón enviaba una solicitud al ESP32 mediante la red local, permitiendo modificar en tiempo real el estado del LED conectado al microcontrolador.</p>
 <p>Este ejercicio permitió comprender el funcionamiento completo de un sistema IoT básico, integrando:</p>
 <p><img alt="" src="../../images/INTER/Diapositiva7.JPG" /></p>
 <p><img alt="" src="../../images/INTER/IMG_7934.gif" /></p>
+<p>Este ejercicio permitió comprender el funcionamiento completo de un sistema IoT básico, integrando: </p>
+<blockquote>
 <p>Hardware (ESP32) / Comunicación Wi-Fi / Servidor Web / Interfaz Digital / Usuario / Output físico</p>
+</blockquote>
 <p>La actividad evidenció cómo una interfaz desarrollada con herramientas de diseño puede convertirse en un medio de interacción entre el usuario y un dispositivo electrónico, ampliando las posibilidades de aplicación en proyectos de automatización, domótica, wearables y productos inteligentes.</p>
 <h3 id="conclusiones">Conclusiones<a class="headerlink" href="#conclusiones" title="Permanent link">&para;</a></h3>
-<p>El ESP32 constituye una plataforma versátil para integrar hardware y aplicaciones digitales gracias a su conectividad inalámbrica incorporada.
-La comunicación serial representa la primera herramienta de diagnóstico para verificar el correcto funcionamiento del programa y del microcontrolador.
-La utilización de interfaces gráficas facilita la interacción entre el usuario y los dispositivos electrónicos, haciendo más intuitivo el control de sistemas físicos.
-La identificación de la dirección IP del ESP32 permite establecer comunicación mediante navegadores o aplicaciones web, convirtiendo al microcontrolador en un pequeño servidor accesible desde distintos dispositivos.
-La integración entre diseño de interfaces y electrónica constituye una competencia clave para el desarrollo de productos interactivos, experiencias IoT y sistemas inteligentes.</p>
+<p>El ESP32 constituye una plataforma versátil para integrar hardware y aplicaciones digitales gracias a su conectividad inalámbrica incorporada.</p>
+<p>La utilización de interfaces gráficas facilita la interacción entre el usuario y los dispositivos electrónicos, haciendo más intuitivo el control de sistemas físicos.Esto resulta especialmente interesante para el desarrollo de productos interactivos, experiencias IoT y sistemas inteligentes.</p>
 <h4 id="fuentes-de-consulta">Fuentes de consulta<a class="headerlink" href="#fuentes-de-consulta" title="Permanent link">&para;</a></h4>
 <p>Random Nerd Tutorials – ESP32 Web Server (Arduino IDE). Guía práctica para crear un servidor web en el ESP32 y controlar salidas digitales mediante una interfaz web.
-Arrow – How to Program an ESP32 Web Server Using Arduino IDE. Introducción al uso del ESP32 como servidor web y a la comunicación mediante direcciones IP.
+Arrow – How to Program an ESP32 Web Server Using Arduino IDE. 
 Ampheo – ESP32 Web Server Tutorial. Tutorial actualizado sobre control de LEDs, sensores y relés desde un navegador web mediante Wi-Fi.
-DIYables ESP32 Web Apps. Ejemplos de aplicaciones web para interactuar con proyectos basados en ESP32.</p>
+DIYables ESP32 Web Apps.</p>
                 
                   
                     
@@ -920,7 +919,7 @@ DIYables ESP32 Web Apps. Ejemplos de aplicaciones web para interactuar con proye
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 5, 2026 23:32:34 UTC">July 5, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 02:33:48 UTC">July 6, 2026</span>
     
   </small>
 </div>
