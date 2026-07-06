@@ -320,8 +320,6 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         MT07
@@ -336,8 +334,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -346,13 +342,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#interfaces-y-aplicaciones" class="md-nav__link">
+    INTERFACES Y APLICACIONES
+  </a>
+  
+    <nav class="md-nav" aria-label="INTERFACES Y APLICACIONES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#introduccion" class="md-nav__link">
     Introducción
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#conceptos-clave" class="md-nav__link">
     Conceptos clave
   </a>
@@ -371,11 +375,36 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ejercicio" class="md-nav__link">
     Ejercicio
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    Conclusiones
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuentes-de-consulta" class="md-nav__link">
+    Fuentes de consulta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -677,8 +706,6 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -687,13 +714,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#interfaces-y-aplicaciones" class="md-nav__link">
+    INTERFACES Y APLICACIONES
+  </a>
+  
+    <nav class="md-nav" aria-label="INTERFACES Y APLICACIONES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#introduccion" class="md-nav__link">
     Introducción
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#conceptos-clave" class="md-nav__link">
     Conceptos clave
   </a>
@@ -712,11 +747,36 @@
     </nav>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ejercicio" class="md-nav__link">
     Ejercicio
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusiones" class="md-nav__link">
+    Conclusiones
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusiones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fuentes-de-consulta" class="md-nav__link">
+    Fuentes de consulta
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -739,6 +799,8 @@
                 
                   
                 
+                
+                  <h1>MT07</h1>
                 
                 <h2 id="interfaces-y-aplicaciones">INTERFACES Y APLICACIONES<a class="headerlink" href="#interfaces-y-aplicaciones" title="Permanent link">&para;</a></h2>
 <h3 id="introduccion">Introducción<a class="headerlink" href="#introduccion" title="Permanent link">&para;</a></h3>
@@ -807,17 +869,17 @@
 <p>Ejercicio 01. Verificación de comunicación con el ESP32</p>
 </blockquote>
 <p>Como primera actividad se estableció la conexión entre el computador y el ESP32 utilizando el entorno de desarrollo Arduino IDE.</p>
-<blockquote>
-<p>void  setup () { 
+<pre>
+<code>
+void  setup () { 
     Serial.begin ( 9600) ; 
     }  
   
 void  loop () { 
-    Serial . println ( &ldquo;¡Hola Mundo!&rdquo; ); delay (500);
+    Serial . println ( "¡Hola Mundo!" ); delay (500);
 }  
-  
-  </p>
-</blockquote>
+</code>
+</pre>
 <p>Luego de cargar el comando, se abrió el Monitor Serial para comprobar que la comunicación entre ambos dispositivos se encontraba funcionando correctamente. El microcontrolador envió un mensaje de confirmación &lsquo;&rsquo;Hello Mundo!&rsquo;&lsquo;, permitiendo verificar tanto la correcta programación como la comunicación serial antes de continuar con el desarrollo del proyecto.</p>
 <p><img alt="" src="../../images/INTER/Diapositiva1.JPG" /></p>
 <p>Esta primera validación constituye una validación inicial para identificar errores de conexión, configuración o carga del programa.</p>
@@ -826,8 +888,9 @@ void  loop () {
 </blockquote>
 <p>Una vez comprobada la comunicación serial, se realizó la primera prueba de salida física (Output).</p>
 <p>Se conectó un LED al protoboard utilizando una salida digital del ESP32 y se cargó un programa que permitía controlar su estado.</p>
-<blockquote>
-<p>void setup() {
+<pre>
+<code>
+>void setup() {
   // initialize digital pin GPIO18 as an output.
   pinMode(18, OUTPUT);
 }
@@ -837,8 +900,10 @@ void loop() {
   delay(500);             // wait for 500 milliseconds
   digitalWrite(18, LOW);  // turn the LED off
   delay(500);             // wait for 500 milliseconds
-}</p>
-</blockquote>
+}
+</code>
+</pre>
+
 <p><img alt="" src="../../images/INTER/Diapositiva2.JPG" /></p>
 <p>Al ejecutar el código se verificó que el LED respondía correctamente a las instrucciones del microcontrolador, confirmando que el sistema era capaz de transformar una instrucción digital en una respuesta física observable. En este caso el código mandaba al led a que estuviera intermitente</p>
 <p><img alt="" src="../../images/INTER/Diapositiva4.JPG" /></p>
@@ -847,43 +912,46 @@ void loop() {
 <p>Ejercicio 03. Desarrollo de una interfaz web para controlar el LED</p>
 </blockquote>
 <p><em>Como ejercicio integrador, se desarrolló una interfaz gráfica utilizando la plataforma Lovable, con el objetivo de controlar el LED desde una aplicación web.</em></p>
-<p>Previamente fue necesario configurar la conexión Wi-Fi del ESP32 dentro del programa, incorporando las credenciales de la red inalámbrica y obteniendo la dirección IP asignada al dispositivo una vez establecida la conexión.
-Para ello se empleó el siguiente código:</p>
-<h1 id="include">include <WiFi.h><a class="headerlink" href="#include" title="Permanent link">&para;</a></h1>
-<h1 id="include_1">include <WebServer.h><a class="headerlink" href="#include_1" title="Permanent link">&para;</a></h1>
-<p>const char* ssid = &ldquo;JACKS&rdquo;;
-const char* password = &ldquo;24589723&rdquo;;
+<p>Previamente fue necesario configurar la conexión Wi-Fi del ESP32 dentro del programa, incorporando las credenciales de la red inalámbrica y obteniendo la dirección IP asignada al dispositivo una vez establecida la conexión.</p>
+<pre>
+<code>
+const char* ssid = "WIFI";
+const char* password = "PASSWORD";
 const int LED_PIN = 18;
- WebServer server(80);
- void addCORS() {
-  server.sendHeader(&ldquo;Access-Control-Allow-Origin&rdquo;, &ldquo;*&rdquo;);
+WebServer server(80);
+void addCORS() {
+  server.sendHeader("Access-Control-Allow-Origin", "*");
 }
- void handleOn() {
+void handleOn() {
   digitalWrite(LED_PIN, HIGH);
   addCORS();
-  server.send(200, &ldquo;text/plain&rdquo;, &ldquo;LED encendido&rdquo;);
+  server.send(200, "text/plain", "LED encendido");
 }
- void handleOff() {
+void handleOff() {
   digitalWrite(LED_PIN, LOW);
   addCORS();
-  server.send(200, &ldquo;text/plain&rdquo;, &ldquo;LED apagado&rdquo;);
+  server.send(200, "text/plain", "LED apagado");
 }
- void setup() {
+void setup() {
   pinMode(LED_PIN, OUTPUT);
   Serial.begin(115200);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(&ldquo;.&rdquo;);
+    Serial.print(".");
   }
-  Serial.println(&ldquo;\nIP del ESP32: &rdquo; + WiFi.localIP().toString());
- server.on(&ldquo;/on&rdquo;, handleOn);
-  server.on(&ldquo;/off&rdquo;, handleOff);
+  Serial.println("\nIP del ESP32: " + WiFi.localIP().toString());
+  server.on("/on", handleOn);
+  server.on("/off", handleOff);
   server.begin();
 }
-void loop() {
+ void loop() {
   server.handleClient();
-}</p>
+}
+
+</code>
+</pre>
+
 <p><img alt="" src="../../images/INTER/Diapositiva3.JPG" /></p>
 <p>Con esta información fue posible obtener el IP a través del cual se realizaría la conexión. Para verificar este IP se colocaba en la web como /on y se apreciaba que el led encendia.</p>
 <p>Ya en la plataforma de Loveable se pidió el desarrollo de una interfaz, que incluyera dos botones principales:</p>
@@ -919,7 +987,7 @@ DIYables ESP32 Web Apps.</p>
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 04:12:25 UTC">July 6, 2026</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 6, 2026 06:29:34 UTC">July 6, 2026</span>
     
   </small>
 </div>
